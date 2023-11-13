@@ -29,6 +29,13 @@ class Auth:
         else:
             return request.headers.get('Authorization')
 
+
     def current_user(self, request=None) -> TypeVar('User'):
         """ placeholder """
         return None
+        def session_cookie(self, request=None):
+        """ Returns cookie value from a request """
+        if request is None:
+            return None
+
+        return request.cookies.get(getenv('SESSION_NAME'))
